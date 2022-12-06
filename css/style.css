@@ -1,0 +1,25 @@
+* {
+  margin: 50px 0px 0px 50px;
+  list-style-position: inside;
+  background-color: rgb(135, 204, 245);
+}
+
+h1 {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  size: 50px;
+}
+
+h2 {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  size: 40px;
+}
+
+section {
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+
+
+ul {
+  list-style-type: square;
+}
