@@ -16,10 +16,24 @@ h2 {
 
 section {
   font-family: 'Encode Sans Condensed', sans-serif;
+  padding: 3vw;
 }
-
-
 
 ul {
+  font-weight: bolder;
   list-style-type: square;
+  padding: 2vw;
 }
+
+li {
+  list-style-type: square;
+  padding: 2vw;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+

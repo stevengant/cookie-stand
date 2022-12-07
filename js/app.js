@@ -24,15 +24,15 @@ let seattle = {
   },
   render: function() {
     this.cookieSales();
-    
-    let h2Elem = document.createElement('h2');
-    h2Elem.textContent = `Cookies sold per hour at ${this.name}.`;
-    storeSection.appendChild(h2Elem);
+
+    let ulElem = document.createElement('ul');
+    ulElem.textContent = `Cookies sold per hour at ${this.name}`;
+    storeSection.appendChild(ulElem);
 
     for(let i = 0; i < hours.length; i++) {
-      let parElem = document.createElement('p');
-      parElem.textContent = `${hours[i]}: ${this.cookiesBought[i]}`;
-      storeSection.appendChild(parElem);
+      let liElem = document.createElement('li');
+      liElem.textContent = `${hours[i]}: ${this.cookiesBought[i]} cookies`;
+      storeSection.appendChild(liElem);
     }
     
   }
@@ -60,9 +60,17 @@ let tokyo = {
   },
   render: function() {
     this.cookieSales();
-    let ulElem = document.createElement('ul');
 
+    let ulElem = document.createElement('ul');
+    ulElem.textContent = `Cookies sold per hour at ${this.name}`;
     storeSection.appendChild(ulElem);
+
+    for(let i = 0; i < hours.length; i++) {
+      let liElem = document.createElement('li');
+      liElem.textContent = `${hours[i]}: ${this.cookiesBought[i]} cookies`;
+      storeSection.appendChild(liElem);
+    }
+    
   }
 };
 
@@ -88,9 +96,17 @@ let Dubai = {
   },
   render: function() {
     this.cookieSales();
-    let ulElem = document.createElement('ul');
 
+    let ulElem = document.createElement('ul');
+    ulElem.textContent = `Cookies sold per hour at ${this.name}`;
     storeSection.appendChild(ulElem);
+
+    for(let i = 0; i < hours.length; i++) {
+      let liElem = document.createElement('li');
+      liElem.textContent = `${hours[i]}: ${this.cookiesBought[i]} cookies`;
+      storeSection.appendChild(liElem);
+    }
+    
   }
 };
 
@@ -116,9 +132,17 @@ let paris = {
   },
   render: function() {
     this.cookieSales();
-    let ulElem = document.createElement('ul');
 
+    let ulElem = document.createElement('ul');
+    ulElem.textContent = `Cookies sold per hour at ${this.name}`;
     storeSection.appendChild(ulElem);
+
+    for(let i = 0; i < hours.length; i++) {
+      let liElem = document.createElement('li');
+      liElem.textContent = `${hours[i]}: ${this.cookiesBought[i]} cookies`;
+      storeSection.appendChild(liElem);
+    }
+    
   }
 };
 
@@ -144,9 +168,17 @@ let lima = {
   },
   render: function() {
     this.cookieSales();
-    let ulElem = document.createElement('ul');
 
+    let ulElem = document.createElement('ul');
+    ulElem.textContent = `Cookies sold per hour at ${this.name}`;
     storeSection.appendChild(ulElem);
+
+    for(let i = 0; i < hours.length; i++) {
+      let liElem = document.createElement('li');
+      liElem.textContent = `${hours[i]}: ${this.cookiesBought[i]} cookies`;
+      storeSection.appendChild(liElem);
+    }
+    
   }
 };
 
