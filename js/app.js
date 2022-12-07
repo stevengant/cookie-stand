@@ -24,9 +24,17 @@ let seattle = {
   },
   render: function() {
     this.cookieSales();
-    let ulElem = document.createElement('ul');
+    
+    let h2Elem = document.createElement('h2');
+    h2Elem.textContent = `Cookies sold per hour at ${this.name}.`;
+    storeSection.appendChild(h2Elem);
 
-    storeSection.appendChild(ulElem);
+    for(let i = 0; i < hours.length; i++) {
+      let parElem = document.createElement('p');
+      parElem.textContent = `${hours[i]}: ${this.cookiesBought[i]}`;
+      storeSection.appendChild(parElem);
+    }
+    
   }
 };
 
