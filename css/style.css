@@ -14,6 +14,10 @@ h2 {
   size: 40px;
 }
 
+h3 {
+  size: 50px;
+}
+
 section {
   font-family: 'Encode Sans Condensed', sans-serif;
   padding: 3vw;
@@ -41,3 +45,6 @@ li {
   width: 50%;
 }
 
+#family {
+  size: 800px 350px;
+}
