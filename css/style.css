@@ -4,6 +4,29 @@
   background-color: rgb(135, 204, 245);
 }
 
+fieldset {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  font-weight: 900;
+}
+
+button {
+  display: block;
+  text-align: center;
+  align-items: center;
+  width: 10vw;
+  background-color: darkblue;
+  color: white;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 h1 {
   font-family: 'Encode Sans Condensed', sans-serif;
   size: 50px;
@@ -48,3 +71,10 @@ li {
 #family {
   size: 800px 350px;
 }
+
+
+
+/* #form fieldset {
+  border: 1px;
+  box-shadow: 1px;
+} */
