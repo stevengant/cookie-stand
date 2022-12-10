@@ -2,12 +2,13 @@
 
 // created operation hours variable
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-// let footTot = [];
 
 let cookieTable = document.getElementById('stores');
-// let tFoot = document.createElement('tFoot');
 
 let storeForm = document.getElementById('addStore');
+
+storeForm.addEventListener('submit',addNewStore);
+
 
 function Store(name, min, max, avg) {
   this.name = name;
@@ -49,7 +50,7 @@ Store.prototype.render = function () {
     let td = document.createElement('td');
     td.textContent = this.cookiesSold[i];
     tr.appendChild(td);
-    // this.hourTotals += this.cookiesSold[i];
+
   }
   td = document.createElement('td');
   td.textContent = this.total;
@@ -64,14 +65,13 @@ function opHours() {
   thead.appendChild(tr);
   let th = document.createElement('th');
   thead.appendChild(th);
-  // td.textContent = this.name;
-  // thead.appendChild(th);
+
 
   for (let i = 0; i < hours.length; i++) {
     th = document.createElement('th');
     th.textContent = hours[i];
     thead.appendChild(th);
-    // this.hourTotals += this.cookiesSold[i];
+
   }
   th = document.createElement('th');
   th.textContent = 'Total';
@@ -88,40 +88,31 @@ new Store('Dubai', 11, 38, 3.7);
 new Store('Paris', 20, 38, 2.3);
 new Store('Lima', 2, 16, 4.6);
 
-// let renderTableFoot = function() {
-//   calcFootTotal();
-//   cookieTable.appendChild(tFoot);
-  
-//   let tr = document.createElement('tr');
-//   tFoot.appendChild(tr);
-  
-//   let th = document.createElement('th');
-//   th.textContent = 'Hourly Grand Totals';
-//   tr.appendChild(th);
+let grandTotal = 0;
+function tableFooter() {
+  let table = document.getElementById('cookieTable');
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
+  td.textContent = 'totals';
+  tr.appendChild(td);
+  for(let i = 0; i < hours.length; i++) {
+    let totalHours = 0;
+    for(let j = 0; j < Store.length; j++) {
+      totalHours = totalHours + Store[j].cookiesSold[i]
+      grandTotal = grandTotal + Store[j].cookiesSold[i]
+    }
+     let td = document.createElement('td');
+     td.textContent = totalHours;
+     tr.appendChild(td);
+  };
+  let grandTotCell = document.createElement('td');
+  grandTotCell.textContent = grandTotal;
+  tr.appendChild(grandTotCell);
+  table.appendChild(tr);
 
-//   for(let i = 0; i < hours.length; i++) {
-//     let td = document.createElement('td');
-//     td.textContent = footTot[i];
-//     tr.appendChild(td);
-//   }
-//   let td = document.createElement('td');
-//   td.textContent = grandTotal;
-//   tr.appendChild(td);
-// }
+}
 
-// function calcFooterTotals() {
-//   footerTot = [];
-//   grandTotal = 0;
-//   for (let i = 0; i < hours.length; i++) {
-//     let hourTotal = 0;
-//     for (let j = 0; j < allStores.length; j++) {
-//       hourTotal += allStores[j].cookiesSoldHourlyArray[i];
-//     }
-//     footerTot.push(hourTotal);
-//     grandTotal += hourTotal;
-//   }
-// }
-// renderTableFoot();
+tableFooter();
 
 function addNewStore(event) {
 
@@ -140,5 +131,3 @@ function addNewStore(event) {
   new Store(newStoreName,addMinCustomers,addMaxCustomers,addAvgSale);
 
 }
-
-storeForm.addEventListener('submit',addNewStore);
